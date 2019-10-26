@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block r_content %}
+	<h1>Pen & Paper</h1>
+	<h2>Journalling for the soul</h2>
+	<a href="{{ url_for('auth.register') }}"><button>Register</button></a>
+    <a href="{{ url_for('auth.login') }}"><button>Login</button></a>
+{% endblock %}

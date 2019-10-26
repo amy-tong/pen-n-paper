@@ -1,0 +1,19 @@
+<!doctype html>
+<head>
+	<title>{% block title %}{% endblock %} -- CircleMeet</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    {% if g.user or request.path == "/" %}
+    	<div id="r-wrapper">
+			<div id="content">{% block r_content %}{% endblock %}</div>
+    	</div>
+    {% else %}
+    	<a href="{{ url_for('home') }}" id="return-to-home"><button>Home</button></a>
+    	{% block second_button %}{% endblock %}
+    	<div id="nr-wrapper">
+    		<header>{% block header %}{% endblock %}</header>
+    		<div id="content">{% block nr_content %}{% endblock %}</div>
+    	</div>
+    {% endif %}
+</body>

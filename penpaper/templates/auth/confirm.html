@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block header %}
+	<h1>{% block title %}Confirmation{% endblock %}</h1>
+{% endblock %}
+
+{% block second_button %}
+	<a href="{{ url_for('auth.login') }}"><button>Login</button></a>
+{% endblock %}
+
+{% block nr_content %}
+	<div class="text">Thanks for registering with Pen & Paper! You will soon recieve an email confirming your new account, but meanwhile, jump on in!</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block header %}
+	<h1>{% block title %}Register{% endblock %} for blah</h1>
+{% endblock %}
+
+{% block second_button %}
+	<a href="{{ url_for('auth.login') }}"><button>Login</button></a>
+{% endblock %}
+
+{% block nr_content %}
+  <form method="post">
+    <input placeholder="First name" name="first_name" id="first-name" required>
+    <input placeholder="Last name" name="last_name" id="last-name" required>
+    <input placeholder="Email" name="email" id="email" required>
+    <input placeholder="Username" name="username" id="username" required>
+    <input placeholder="Password" type="password" name="password" id="password" required>
+    <input type="submit" value="Register">
+  </form>
+{% endblock %}
