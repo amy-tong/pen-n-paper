@@ -1,0 +1,25 @@
+DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS entry;
+DROP TABLE IF EXISTS user_entries;
+
+CREATE TABLE user (
+	user_id INTEGER PRIMARY KEY AUTOINCREMENT,
+	username VARCHAR(255) UNIQUE NOT NULL,
+	password VARCHAR(255) NOT NULL,
+	name VARCHAR(255),
+	email VARCHAR(255) NOT NULL,
+);
+
+CREATE TABLE entry (
+	entry_id INTEGER PRIMARY KEY AUTOINCREMENT,
+	entry TEXT NOT NULL,
+	date_time DATETIME NOT NULL,
+	rating REAL NOT NULL,
+);
+
+CREATE TABLE user_entries (
+	user_id INTEGER NOT NULL,
+	entry_id INTEGER NOT NULL,
+	-- user_id INTEGER FOREIGN KEY REFERENCES user(user_id)
+	-- entry_id INTEGER FOREIGN KEY REFERENCES entry(entry_id)	
+);

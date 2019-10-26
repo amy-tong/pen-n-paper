@@ -15,8 +15,7 @@ def register():
 	if request.method == 'POST':
 		username = request.form['username']
 		password = request.form['password']
-		first_name = request.form['first_name']
-		last_name = request.form['last_name']
+		name = request.form['name']
 		email = request.form['email']
 		error = None
 		db = get_db()
@@ -28,7 +27,7 @@ def register():
 		elif not email:
 			error = "Email is required."
 		elif db.execute(
-			'SELECT id FROM user WHERE username = ?', (username,)
+			'SELECT user_id FROM user WHERE username = ?', (username,)
 		).fetchone() is not None:
 			error = "This username has been taken."
 		# elif db.execute(
@@ -38,9 +37,9 @@ def register():
 
 		if not error:
 			db.execute(
-				'INSERT INTO user (username, password, first_name, last_name, email)'
-					' VALUES (?, ?, ?, ?, ?)', (username, 
-					generate_password_hash(password), first_name, last_name, email,)
+				'INSERT INTO user (username, password, name, email)'
+					' VALUES (?, ?, ?, ?)', (username, 
+					generate_password_hash(password), name, email,)
 			)
 			db.commit()
 
@@ -84,7 +83,3 @@ def login():
 		flash(error)
 
 	return render_template('auth/login.html')
-
-
-
-

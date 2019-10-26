@@ -4,11 +4,11 @@
 	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    {% if g.user or request.path == "/" %}
+    {% if g.user or request.path == "/" %} <!-- if logged in or at landing page -->
     	<div id="r-wrapper">
 			<div id="content">{% block r_content %}{% endblock %}</div>
     	</div>
-    {% else %}
+    {% else %} <!-- if using auth? -->
     	<a href="{{ url_for('landing') }}" id="return-to-landing"><button>Landing</button></a>
     	{% block second_button %}{% endblock %}
     	<div id="nr-wrapper">
