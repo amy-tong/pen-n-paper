@@ -39,7 +39,7 @@ def register():
 		if not error:
 			db.execute(
 				'INSERT INTO user (username, password, first_name, last_name, email)'
-					' VALUES (?, ?, ?, ?, ?)', (username, 
+					' VALUES (?, ?, ?, ?, ?)', (username,
 					generate_password_hash(password), first_name, last_name, email,)
 			)
 			db.commit()
@@ -85,6 +85,6 @@ def login():
 
 	return render_template('auth/login.html')
 
-
-
-
+@bp.route('/calendar')
+def calendar():
+	return render_template('auth/login.html')
