@@ -36,10 +36,7 @@ def register():
 		# 	error = "This email is already registered."
 
 		if not error:
-			db.execute(
-				'INSERT INTO user (username, password, first_name, last_name, email)'
-					' VALUES (?, ?, ?, ?, ?)', (username,
-					generate_password_hash(password), first_name, last_name, email,)
+			db.execute
 				'INSERT INTO user (username, password, name, email)'
 					' VALUES (?, ?, ?, ?)', (username,
 					generate_password_hash(password), name, email,)
@@ -86,7 +83,6 @@ def login():
 		flash(error)
 
 	return render_template('auth/login.html')
-
 @bp.route('/calendar')
 def calendar():
 	return render_template('auth/login.html')
