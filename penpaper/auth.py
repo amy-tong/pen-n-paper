@@ -79,7 +79,12 @@ def login():
 				session.clear()
 				session['user_id'] = user['id']
 				return redirect(url_for('dash.index'))
-
+				
 		flash(error)
 
+	return render_template('auth/login.html')
+
+
+@bp.route('/calendar')
+def calendar():
 	return render_template('auth/login.html')
