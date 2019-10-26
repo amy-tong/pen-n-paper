@@ -4,7 +4,7 @@ from flask import (
 	Blueprint, g, request, redirect, url_for, flash, render_template, session
 )
 from werkzeug.security import generate_password_hash, check_password_hash
-from circlemeet.db import get_db
+from penpaper.db import get_db
 
 
 bp = Blueprint('auth', __name__)
