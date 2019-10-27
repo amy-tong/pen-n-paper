@@ -12,8 +12,13 @@ bp = Blueprint('dash', __name__, url_prefix='/dash')
 def index():
 	return render_template('dash/index.html')
 
+@bp.route('/new')
+def jounral():
+	return render_template('dash/journal.html')
+
 @bp.route('/calendar')
 def calendar():
+<<<<<<< HEAD
 	return render_template('dash/calendar.html')
 
 @bp.route('/journal', methods=('GET', 'POST'))
@@ -39,3 +44,9 @@ def journal():
 
 		flash(error)
 	return render_template('dash/journal.html')
+||||||| merged common ancestors
+	return render_template('auth/calendar.html')
+=======
+	return render_template('dash/calendar.html')
+
+>>>>>>> 1d55d9b32763cf7311ac2d53f23abf4878b42665

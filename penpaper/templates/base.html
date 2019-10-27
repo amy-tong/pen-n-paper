@@ -4,7 +4,7 @@
 	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    {% if g.user or request.path == "/" %} <!-- if logged in or at landing page -->
+    {% if session["user"] != None or request.path == "/" %} <!-- if logged in or at landing page -->
     	<div id="r-wrapper">
 			<div id="content">{% block r_content %}{% endblock %}</div>
     	</div>
