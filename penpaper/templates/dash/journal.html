@@ -1,6 +1,11 @@
+
+{% block r_content %}
 <head>
   <link rel = "stylesheet" href = "../../static/journal.css" />
 </head>
 <div class="title">Write your thoughts here:</div>
-<p><input type="text"></p>
-<input type="submit" value="Submit">
+<form method = "post">
+  <input type="entry" name="entry" id="entry" required>
+  <input type="submit" value="Submit">
+</form>
+{% endblock %}
