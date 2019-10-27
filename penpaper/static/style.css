@@ -1,0 +1,72 @@
+html, body, #content {
+    height: 100%;
+    margin: 0;
+}
+
+#r-wrapper {
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+/*home page*/
+
+#buttonspace {
+    position: relative;
+    top: 10%;
+    left: 10%;
+    height: 80%;
+    width: 80%;
+}
+
+#one {
+    position: relative;
+    top: 28%;
+    left: 42%;
+}
+
+#two {
+    position: relative;
+    top: 35%;
+    left: 18%;
+}
+
+#three {
+    position: relative;
+    top: 50%;
+    left: 19%;
+}
+
+#four {
+    position: relative;
+    top: 52%;
+    left: 20%;
+}
+
+#five {
+    position: relative;
+    top: 35%;
+    left: 20%;
+}
+
+#large-icon {
+	width: 150px;
+	transition: 0.8s;
+}
+.icon {
+    width: 100px;
+    transition: 0.8s;
+}
+
+#large-icon:hover {
+	transform: scale(1.12);
+	cursor: pointer;
+}
+.icon:hover {
+	transform: scale(1.17);
+	cursor: pointer;
+}

@@ -11,7 +11,7 @@ def index():
 	return render_template('dash/index.html')
 
 @bp.route('/new')
-def jounral():
+def journal():
 	return render_template('dash/journal.html')
 
 @bp.route('/calendar')
