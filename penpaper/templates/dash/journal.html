@@ -1,11 +1,14 @@
-
 {% block r_content %}
 <head>
   <link rel = "stylesheet" href = "../../static/journal.css" />
 </head>
+<body bgcolor="#f0ead6">
 <div class="title">Write your thoughts here:</div>
 <form method = "post">
+  <div class="journal">
   <input type="entry" name="entry" id="entry" required>
+  </div>
   <input type="submit" value="Submit">
 </form>
+</body>
 {% endblock %}
