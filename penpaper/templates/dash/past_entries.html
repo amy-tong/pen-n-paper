@@ -1,4 +1,5 @@
-<table class="table table-hover">
+
+<!-- <table class="table table-hover">
         <thead>
           <tr>
             <th>Past Entries</th>
@@ -7,4 +8,22 @@
           {% for entry in entry %}
 <strong>Entry:</strong> {{ entry.entry }} <br>
 <strong>Date:</strong> {{ entry.date_time }} <br>
-{% endfor %}
+{% endfor %} -->
+<!doctype html>
+<html>
+   <body>
+      <table border = 1>
+         <thead>
+            <td>Entry</td>
+            <td>Date/Time></td<
+         </thead>
+
+         {% for row in rows %}
+            <tr>
+               <td>{{row["entry"]}}</td>
+               <td>{{row["date_time"]}}</td>
+            </tr>
+         {% endfor %}
+      </table>
+   </body>
+</html>
