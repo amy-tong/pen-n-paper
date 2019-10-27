@@ -3,15 +3,19 @@
 {% block title %}Dashboard{% endblock %}
 
 {% block r_content %}
-	<div id="sidebar">
-		<button id="edit-pic">Profile Picture</button>
-		<button>Settings</button>
-		<button>Logout</button>
-		<button>Explore</button>
-		<button>My Groups</button>
-		<button id="optional-button-1">(group 1)</button>
-		<button id="optional-button-2">(group 2)</button>
-	</div>
-
-	
+	<a href="{{ url_for('dash.jounral') }}">
+<!-- 		<img src={{ url_for('static', filename='img/calendar.png') }} alt="Calendar">
+ -->	</a>
+	<a href="{{ url_for('dash.calendar') }}">
+<!-- 		<img src={{ url_for('static', filename='img/calendar.png') }} alt="Calendar">
+ -->	</a>
+	<a href="{{ url_for('dash.calendar') }}">
+<!-- 		<img src={{ url_for('static', filename='img/past_entries.png') }} alt="Past Entries">
+ -->	</a>
+	<a href="{{ url_for('dash.calendar') }}">
+<!-- 		<img src={{ url_for('static', filename='img/account.png') }} alt="Account">
+ -->	</a>
+	<a href="{{ url_for('dash.calendar') }}">
+<!-- 		<img src={{ url_for('static', filename='img/stats.png') }} alt="Stats">
+ -->	</a>
 {% endblock %}

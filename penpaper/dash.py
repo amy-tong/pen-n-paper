@@ -10,6 +10,11 @@ bp = Blueprint('dash', __name__, url_prefix='/dash')
 def index():
 	return render_template('dash/index.html')
 
+@bp.route('/new')
+def jounral():
+	return render_template('dash/journal.html')
+
 @bp.route('/calendar')
 def calendar():
-	return render_template('auth/calendar.html')
+	return render_template('dash/calendar.html')
+
