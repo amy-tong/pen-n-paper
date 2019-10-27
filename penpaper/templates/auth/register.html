@@ -8,12 +8,18 @@
 	<a href="{{ url_for('auth.login') }}"><button>Login</button></a>
 {% endblock %}
 
+
 {% block nr_content %}
-  <form method="post">
-    <input placeholder="Name" name="name" id="name">
-    <input placeholder="Email" name="email" id="email" required>
-    <input placeholder="Username" name="username" id="username" required>
-    <input placeholder="Password" type="password" name="password" id="password" required>
-    <input type="submit" value="Register">
-  </form>
+<html>
+   <body>
+      <form method = "post">
+         <p>Enter Name:</p>
+         <input placeholder="Name" type = "text" name = "name" />
+				 <p><input placeholder="Email" name="email" id="email" required></p>
+		     <p><input placeholder="Username" name="username" id="username" required></p>
+		     <input placeholder="Password" type="password" name="password" id="password" required>
+		     <input type="submit" value="Register">
+      </form>
+   </body>
+</html>
 {% endblock %}
