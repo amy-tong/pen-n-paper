@@ -1,4 +1,5 @@
 import functools
+import sqlite3
 
 from flask import (
 	Blueprint, g, request, redirect, url_for, flash, render_template, session
@@ -36,12 +37,12 @@ def register():
 		# 	error = "This email is already registered."
 
 		if not error:
-			db.execute
+			db.execute(
 				'INSERT INTO user (username, password, name, email)'
 					' VALUES (?, ?, ?, ?)', (username,
 					generate_password_hash(password), name, email,)
 			)
-			db.commit()
+			conn.commit()
 
 			return redirect(url_for("auth.confirm"))
 
@@ -82,7 +83,4 @@ def login():
 
 		flash(error)
 
-	return render_template('auth/login.html')
-@bp.route('/calendar')
-def calendar():
 	return render_template('auth/login.html')
