@@ -3,20 +3,13 @@
 {% block title %}Dashboard{% endblock %}
 
 {% block r_content %}
-<<<<<<< Updated upstream
-||||||| merged common ancestors
-<<<<<<< HEAD
-=======
-<head>
 	<title id="pnp-title">Pen&Paper</title>
-</head>
->>>>>>> Stashed changes
 	<div id="buttonspace">
 		<a id="one" href="{{ url_for('dash.journal') }}">
 			<img id="large-icon" src={{ url_for('static', filename='img/journal.png') }} alt="New Entry">
 		</a>
 
-		<a id="two" href="{{ url_for('dash.calendar') }}">
+		<a id="two" href="">
 			<img class="icon" src={{ url_for('static', filename='img/account.png') }} alt="Account">
 		</a>
 		<a id="three" href="{{ url_for('dash.calendar') }}">
@@ -25,7 +18,7 @@
 		<a id="four" href="{{ url_for('dash.past_entries') }}">
 			<img class="icon" src={{ url_for('static', filename='img/past_entries.png') }} alt="Past Entries">
 		</a>
-		<a id="five" href="{{ url_for('dash.calendar') }}">
+		<a id="five" href="">
 			<img class="icon" src={{ url_for('static', filename='img/stats.png') }} alt="Stats">
 		</a>
 	</div>

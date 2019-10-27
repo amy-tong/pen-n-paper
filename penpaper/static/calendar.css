@@ -3,6 +3,9 @@
  * https://www.sketchappsources.com/free-source/2676-calendar-template-sketch-freebie-resource.html
  */
 
+body {
+  margin: 0;
+}
 
 /* WRAPPER */
 
@@ -12,8 +15,8 @@
   grid-template-columns: 1fr;
   grid-template-areas: "sidebar"
                        "content";
-  width: 100vw; /* unnecessary, but let's keep things consistent */
-  height: 100vh;
+  width: 100%; /* unnecessary, but let's keep things consistent */
+  height: 100%;
 }
 
 @media screen and (min-width: 850px) {
