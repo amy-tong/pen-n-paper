@@ -3,7 +3,6 @@
 {% block title %}Dashboard{% endblock %}
 
 {% block r_content %}
-<<<<<<< HEAD
 	<div id="buttonspace">
 		<a id="one" href="{{ url_for('dash.journal') }}">
 			<img id="large-icon" src={{ url_for('static', filename='img/journal.png') }} alt="New Entry">
@@ -15,7 +14,7 @@
 		<a id="three" href="{{ url_for('dash.calendar') }}">
 			<img class="icon" src={{ url_for('static', filename='img/calendar.png') }} alt="Calendar">
 		</a>
-		<a id="four" href="{{ url_for('dash.calendar') }}">
+		<a id="four" href="{{ url_for('dash.past_entries') }}">
 			<img class="icon" src={{ url_for('static', filename='img/past_entries.png') }} alt="Past Entries">
 		</a>
 		<a id="five" href="{{ url_for('dash.calendar') }}">
