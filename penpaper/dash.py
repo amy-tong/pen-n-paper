@@ -61,11 +61,9 @@ def journal():
 @bp.route('/past_entries')
 def past_entries():
 	db = get_db()
+	#cur = db.cursor()
+	db.row_factory = sqlite3.Row
 	cur = db.cursor()
-	# test = cur.fetchall()
-	# cur.execute('SELECT * FROM entry')
-	# entries = [dict(entry=row[0],
-    #                 date=row[1])
-    #                  for row in cur.fetchall()]
-	# db.close()
-	return render_template('dash/past_entries.html') #, rows = entries)
+	cur.execute("select * from entry")
+	rows = cur.fetchall()
+	return render_template("dash/past_entries.html", rows = rows)
