@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from flask import (
 	Blueprint, g, request, redirect, url_for, flash, render_template, session
 )
@@ -12,4 +14,28 @@ def index():
 
 @bp.route('/calendar')
 def calendar():
-	return render_template('auth/calendar.html')
+	return render_template('dash/calendar.html')
+
+@bp.route('/journal', methods=('GET', 'POST'))
+def journal():
+	if request.method == 'POST':
+		entry = request.form["entry_id"]
+		now = datetime.now()
+		date_time = now.strftime("%d/%m/%Y %H:%M:%S")
+
+		error = None
+		db = get_db()
+
+		if not entry:
+			error = "Please type your thoughts."
+		if not error:
+			db.execute(
+				'INSERT INTO entry (entry, date_time, rating)'
+					' VALUES (?, ?, ?)', (entry, date_time, 0)
+			)
+			db.commit()
+
+			return redirect(url_for("dash.index"))
+
+		flash(error)
+	return render_template('dash/journal.html')
