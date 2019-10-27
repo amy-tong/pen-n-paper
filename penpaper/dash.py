@@ -6,21 +6,22 @@ from flask import (
 import os
 
 from penpaper.db import get_db
-from google.cloud import language
-from google.cloud.language import enums
-from google.cloud.language import types
 
-# Instantiates a client
-def sentiment(text):
-    client = language.LanguageServiceClient.from_service_account_json(r"C:\Users\zliu1\projects\pen-paper\penpaper\credentials.json")
+# from google.cloud import language
+# from google.cloud.language import enums
+# from google.cloud.language import types
 
-    document = types.Document(
-        content=text,
-        type=enums.Document.Type.PLAIN_TEXT)
+# # Instantiates a client
+# def sentiment(text):
+#     client = language.LanguageServiceClient.from_service_account_json(r"C:\Users\zliu1\projects\pen-paper\penpaper\credentials.json")
 
-    # Detects the sentiment of the text
-    sentiment = client.analyze_sentiment(document=document).document_sentiment
-    return sentiment.score
+#     document = types.Document(
+#         content=text,
+#         type=enums.Document.Type.PLAIN_TEXT)
+
+#     # Detects the sentiment of the text
+#     sentiment = client.analyze_sentiment(document=document).document_sentiment
+#     return sentiment.score
 
 
 bp = Blueprint('dash', __name__, url_prefix='/dash')
@@ -61,11 +62,16 @@ def journal():
 @bp.route('/past_entries')
 def past_entries():
 	db = get_db()
+	#cur = db.cursor()
+	db.row_factory = sqlite3.Row
 	cur = db.cursor()
+	cur.execute("select * from entry")
+	rows = cur.fetchall()
+	return render_template("dash/past_entries.html", rows = rows)
 	# test = cur.fetchall()
 	# cur.execute('SELECT * FROM entry')
 	# entries = [dict(entry=row[0],
     #                 date=row[1])
     #                  for row in cur.fetchall()]
 	# db.close()
-	return render_template('dash/past_entries.html') #, rows = entries)
+	#return render_template('dash/past_entries.html') #, rows = entries)
