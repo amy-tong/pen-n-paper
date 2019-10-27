@@ -42,7 +42,7 @@ def register():
 					' VALUES (?, ?, ?, ?)', (username,
 					generate_password_hash(password), name, email,)
 			)
-			conn.commit()
+			db.commit()
 
 			return redirect(url_for("auth.confirm"))
 
