@@ -67,7 +67,40 @@
       </div>
     </div>
   </main>
+
   <sidebar>
+    <nav class="menu">
+      <a class="menu__item" href="{{ url_for('dash.index') }}">
+        <img class="menu__icon" src={{ url_for('static', filename='img/journal.png') }} alt="Home">
+      </a>
+      <a class="menu__item" href=#>
+        <img class="menu__icon" src={{ url_for('static', filename='img/account.png') }} alt="Account">
+      </a>
+      <a class="menu__item" href="{{ url_for('dash.calendar') }}">
+        <img class="menu__icon" src={{ url_for('static', filename='img/calendar.png') }} alt="Calendar">
+      </a>
+      <a class="menu__item" href="{{ url_for('dash.past_entries') }}">
+        <img class="menu__icon" src={{ url_for('static', filename='img/past_entries.png') }} alt="Past Entries">
+      </a>
+      <a class="menu__item" href=#>
+        <img class="menu__icon" src={{ url_for('static', filename='img/stats.png') }} alt="Stats">
+      </a>
+    </nav>
+    <div class="copyright">copyright &copy; 2018</div>
+  </sidebar>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+<!--   <sidebar>
     <div class="logo">logo</div>
     <div class="avatar">
       <div class="avatar__img">
@@ -107,4 +140,4 @@
     </nav>
     <div class="copyright">copyright &copy; 2018</div>
   </sidebar>
-</div>
+ -->

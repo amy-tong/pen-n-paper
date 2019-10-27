@@ -2,6 +2,11 @@
  * ALL the UI design credit goes to:
  * https://www.sketchappsources.com/free-source/2676-calendar-template-sketch-freebie-resource.html
  */
+/**
+ * Credit for UI skeleton goes to:
+ * https://www.sketchappsources.com/free-source/2676-calendar-template-sketch-freebie-resource.html
+ */
+
 
 body {
   margin: 0;
@@ -22,8 +27,10 @@ body {
 @media screen and (min-width: 850px) {
   .wrapper {
     grid-template-columns: 200px 5fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: "sidebar content";
+    grid-template-rows: 110px 1fr 20px;
+    grid-template-areas: "...     content"
+                         "sidebar content"
+                         "...     content";
   }
 }
 
@@ -33,7 +40,7 @@ body {
 
 main {
   grid-area: content;
-  padding: 48px;
+  padding: 47px;
 }
 
 sidebar {
@@ -55,12 +62,12 @@ sidebar {
 .avatar {
   grid-area: avatar;
   display: flex;
-  align-items: center;
-  flex-direction: row-reverse;
+  align-content: center;
+  justify-content: center;
 }
 .avatar__name {
   flex: 1;
-  text-align: right;
+  text-align: center;
   margin-right: 1em;
 }
 .avatar__img > img {
@@ -69,6 +76,8 @@ sidebar {
 
 .copyright {
   grid-area: copyright;
+  justify-content: center;
+  align-content: center;
 }
 .menu {
   grid-area: menu;
@@ -85,17 +94,16 @@ sidebar {
 
 @media screen and (min-width: 850px) {
   sidebar {
-    grid-template-areas: "logo"
-                         "avatar"
-                         "menu"
+    grid-template-areas: "menu"
                          "copyright";
     grid-template-columns: 1fr;
-    grid-template-rows: 50px auto 1fr 50px;
+    grid-template-rows: 1fr 30px;
   }
 
   .menu {
+    padding-top: 20px;
     flex-direction: column;
-    align-items: normal;
+    align-items: center;
     justify-content: flex-start;
   }
   .menu__text {
@@ -157,16 +165,15 @@ sidebar {
 body {
   font-family: Montserrat;
   font-weight: 100;
-  color: #A8B2B9;
+  background-color: #f0ead6;
 }
 
 sidebar {
   background-color: white;
+  border: 1.5px solid #0B5351;
+  border-left: 0px;
+  border-radius: 0px 50px 50px 0px;
   box-shadow: 5px 0px 20px rgba(0, 0, 0, 0.2);
-}
-
-main {
-  background-color: #FCFBFC;
 }
 
 .avatar__name {
@@ -197,7 +204,7 @@ main {
 
 
 .menu__icon {
-  font-size: 1.3rem;
+  width: 75px;
 }
 
 @media screen and (min-width: 850px) {
@@ -218,7 +225,8 @@ main {
 
 .calendar {
   background-color: white;
-  border: 1px solid #e1e1e1;
+  border: 1px solid #A0A4B8;
+  border-radius: 20px;
 }
 
 .calendar__header > div {
@@ -228,8 +236,8 @@ main {
 }
 
 .calendar__day {
-  border-right: 1px solid #e1e1e1;
-  border-top: 1px solid #e1e1e1;
+  border-right: 1px solid #C7CCE5;
+  border-top: 1px solid #C7CCE5;
 }
 
 .calendar__day:last-child {
