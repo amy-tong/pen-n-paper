@@ -1,9 +1,11 @@
-{% extends 'base.html' %}
+
 {% block r_content %}
 <head>
   <link rel = "stylesheet" href = "../../static/journal.css" />
 </head>
 <div class="title">Write your thoughts here:</div>
-<input type="entry" name="entry" id="entry" required>
-<input type="submit" value="Submit">
+<form method = "post">
+  <input type="entry" name="entry" id="entry" required>
+  <input type="submit" value="Submit">
+</form>
 {% endblock %}

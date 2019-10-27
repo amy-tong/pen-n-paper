@@ -1,9 +1,10 @@
 from datetime import datetime
+import sqlite3
 
 from flask import (
 	Blueprint, g, request, redirect, url_for, flash, render_template, session
 )
-
+from penpaper.db import get_db
 
 bp = Blueprint('dash', __name__, url_prefix='/dash')
 
@@ -12,10 +13,6 @@ bp = Blueprint('dash', __name__, url_prefix='/dash')
 def index():
 	return render_template('dash/index.html')
 
-@bp.route('/new')
-def jounral():
-	return render_template('dash/journal.html')
-
 @bp.route('/calendar')
 def calendar():
 	return render_template('dash/calendar.html')
@@ -23,7 +20,7 @@ def calendar():
 @bp.route('/journal', methods=('GET', 'POST'))
 def journal():
 	if request.method == 'POST':
-		entry = request.form["entry_id"]
+		entry = request.form["entry"]
 		now = datetime.now()
 		date_time = now.strftime("%d/%m/%Y %H:%M:%S")
 
@@ -43,3 +40,15 @@ def journal():
 
 		flash(error)
 	return render_template('dash/journal.html')
+
+@bp.route('/past_entries')
+def past_entries():
+	db = get_db()
+	cur = db.cursor()
+	# test = cur.fetchall()
+	# cur.execute('SELECT * FROM entry')
+	entries = [dict(entry=row[0],
+                    date=row[1])
+                     for row in cur.fetchall()]
+	db.close()
+	return render_template('dash/past_entries.html', rows = entries)

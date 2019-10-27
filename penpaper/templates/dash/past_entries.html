@@ -1,0 +1,10 @@
+<table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Past Entries</th>
+
+          </tr>
+          {% for entry in entry %}
+<strong>Entry:</strong> {{ entry.entry }} <br>
+<strong>Date:</strong> {{ entry.date_time }} <br>
+{% endfor %}
