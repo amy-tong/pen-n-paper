@@ -1,6 +1,7 @@
 html, body, #content {
     height: 100%;
     margin: 0;
+    background-color: #f0ead6;
 }
 
 #r-wrapper {

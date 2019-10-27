@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
 
-{% block title %}Dashboard{% endblock %}
+
 
 {% block r_content %}
+<head><div id="pnp-title">Pen & Paper</div>
+<link rel = "stylesheet" href = "../../static/style.css" />
+</head>
+<body bgcolor="#f0ead6">
 	<div id="buttonspace">
 		<a id="one" href="{{ url_for('dash.journal') }}">
 			<img id="large-icon" src={{ url_for('static', filename='img/journal.png') }} alt="New Entry">
@@ -21,4 +25,5 @@
 			<img class="icon" src={{ url_for('static', filename='img/stats.png') }} alt="Stats">
 		</a>
 	</div>
+	</body>
 {% endblock %}
